@@ -1,0 +1,12 @@
+name: go_play_bloc
+description: Share Code between Flutter Mobile and Web
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.5.0 <3.0.0"
+
+dependencies:
+  meta: ^1.1.7
+  equatable: ^0.1.0
+  http: ^0.12.0
+  rxdart: ^0.22.5
