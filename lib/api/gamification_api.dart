@@ -41,6 +41,7 @@ class GamificationApi {
   Future<Gamification> postGamification(Gamification gamification) async {
     final response = await httpClient.post(
         '${Constants.baseUrl}/api/Gamifications',
+        headers: Constants.headers,
         body: jsonEncode(gamification.toJson(gamification)));
 
     Gamification _gamification = Gamification();
@@ -56,6 +57,7 @@ class GamificationApi {
   Future<Gamification> updateGamification(Gamification gamification) async {
     final response = await httpClient.put(
         '${Constants.baseUrl}/api/Gamifications/${gamification.gamificationId}',
+        headers: Constants.headers,
         body: jsonEncode(gamification.toJson(gamification)));
 
     Gamification _gamification = Gamification();

@@ -39,7 +39,7 @@ class VenueApi {
 
   Future<Venue> postVenue(Venue venue) async {
     final response = await httpClient.post('${Constants.baseUrl}/api/Venues',
-        body: jsonEncode(venue.toJson(venue)));
+        headers: Constants.headers, body: jsonEncode(venue.toJson(venue)));
 
     Venue _venue = Venue();
 
@@ -54,6 +54,7 @@ class VenueApi {
   Future<Venue> updateVenue(Venue venue) async {
     final response = await httpClient.put(
         '${Constants.baseUrl}/api/Venues/${venue.venueId}',
+        headers: Constants.headers,
         body: jsonEncode(venue.toJson(venue)));
 
     Venue _venue = Venue();

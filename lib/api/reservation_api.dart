@@ -41,6 +41,7 @@ class ReservationApi {
   Future<Reservation> postReservation(Reservation reservation) async {
     final response = await httpClient.post(
         '${Constants.baseUrl}/api/Reservations',
+        headers: Constants.headers,
         body: jsonEncode(reservation.toJson(reservation)));
 
     Reservation _reservation = Reservation();
@@ -56,6 +57,7 @@ class ReservationApi {
   Future<Reservation> updateReservation(Reservation reservation) async {
     final response = await httpClient.put(
         '${Constants.baseUrl}/api/Reservations/${reservation.reservationId}',
+        headers: Constants.headers,
         body: jsonEncode(reservation.toJson(reservation)));
 
     Reservation _reservation = Reservation();

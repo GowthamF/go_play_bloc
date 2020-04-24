@@ -10,6 +10,7 @@ class UserApi {
   Future<User> login(User user) async {
     final response = await httpClient.post(
       '${Constants.baseUrl}/api/User/Login',
+      headers: Constants.headers,
       body: jsonEncode(
         user.toJson(
           user,
@@ -31,6 +32,7 @@ class UserApi {
   Future<User> register(User user) async {
     final response = await httpClient.post(
       '${Constants.baseUrl}/api/User/Register',
+      headers: Constants.headers,
       body: jsonEncode(
         user.toJson(
           user,
@@ -40,7 +42,7 @@ class UserApi {
 
     User _user = User();
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       dynamic user = jsonDecode(response.body);
 
       _user = User.fromJson(user);
@@ -52,6 +54,7 @@ class UserApi {
   Future<User> updateUser(User user) async {
     final response = await httpClient.put(
       '${Constants.baseUrl}/api/User/UpdateUser/${user.userId}',
+      headers: Constants.headers,
       body: jsonEncode(
         user.toJson(
           user,

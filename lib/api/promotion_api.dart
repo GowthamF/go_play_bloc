@@ -41,6 +41,7 @@ class PromotionApi {
   Future<Promotion> postPromotion(Promotion promotion) async {
     final response = await httpClient.post(
         '${Constants.baseUrl}/api/Promotions',
+        headers: Constants.headers,
         body: jsonEncode(promotion.toJson(promotion)));
 
     Promotion _promotion = Promotion();
@@ -56,6 +57,7 @@ class PromotionApi {
   Future<Promotion> updatePromotion(Promotion promotion) async {
     final response = await httpClient.put(
         '${Constants.baseUrl}/api/Promotions/${promotion.promotionId}',
+        headers: Constants.headers,
         body: jsonEncode(promotion.toJson(promotion)));
 
     Promotion _promotion = Promotion();
