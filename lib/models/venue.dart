@@ -1,12 +1,9 @@
-import 'dart:convert';
-import 'dart:typed_data';
-
 class Venue {
   final int venueId;
   final String venueName;
   final String address;
   final String number;
-  final Uint8List imageBytes;
+  final String imageString;
   final double ratings;
 
   Venue(
@@ -14,7 +11,7 @@ class Venue {
       this.venueName,
       this.address,
       this.number,
-      this.imageBytes,
+      this.imageString,
       this.ratings = 0});
 
   factory Venue.fromJson(Map<String, dynamic> json) {
@@ -23,7 +20,8 @@ class Venue {
         venueName: json['venueName'],
         address: json['address'],
         number: json['number'],
-        imageBytes: base64.decode(json['image']));
+        imageString: json['image'],
+        ratings: json['ratings'].toDouble());
   }
 
   Map<String, dynamic> toJson(Venue venue) {
@@ -33,6 +31,7 @@ class Venue {
       'Address': venue.address,
       'Number': venue.number,
       'Ratings': venue.ratings,
+      'Image': venue.imageString
     };
   }
 }
