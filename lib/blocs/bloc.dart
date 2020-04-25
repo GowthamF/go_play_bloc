@@ -17,3 +17,7 @@ export 'promotion_blocs/promotion_state.dart';
 export 'gamification_blocs/gamification_bloc.dart';
 export 'gamification_blocs/gamification_event.dart';
 export 'gamification_blocs/gamification_state.dart';
+
+export 'review_blocs/review_bloc.dart';
+export 'review_blocs/review_event.dart';
+export 'review_blocs/review_state.dart';

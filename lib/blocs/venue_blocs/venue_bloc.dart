@@ -55,6 +55,14 @@ class VenueBloc extends Bloc<VenueEvent, VenueState> {
         print(ex);
         VenueError();
       }
+    } else if (event is AddRatings) {
+      try {
+        Venue venue = await _venueRepository.postVenue(event.venue);
+        yield VenueLoaded(venue: venue);
+      } catch (ex) {
+        print(ex);
+        VenueError();
+      }
     }
   }
 }

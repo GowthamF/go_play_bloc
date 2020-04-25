@@ -45,3 +45,12 @@ class DeleteVenue extends VenueEvent {
   @override
   List<Object> get props => [venue];
 }
+
+class AddRatings extends VenueEvent {
+  final Venue venue;
+
+  const AddRatings({this.venue});
+
+  @override
+  List<Object> get props => [venue];
+}

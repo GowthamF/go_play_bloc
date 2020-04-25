@@ -80,4 +80,21 @@ class VenueApi {
 
     return _venue;
   }
+
+  Future<Venue> addRatings(Venue venue) async {
+    final response = await httpClient.put(
+      '${Constants.baseUrl}/api/Venues/UpdateRatings/${venue.venueId}',
+      headers: Constants.headers,
+      body: jsonEncode(venue.toJson(venue)),
+    );
+
+    Venue _venue = Venue();
+
+    if (response.statusCode == 200) {
+      dynamic venues = jsonDecode(response.body);
+      _venue = Venue.fromJson(venues);
+    }
+
+    return _venue;
+  }
 }

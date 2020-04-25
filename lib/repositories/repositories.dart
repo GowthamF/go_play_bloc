@@ -3,3 +3,4 @@ export 'venue_repository.dart';
 export 'reservation_repository.dart';
 export 'promotions_repository.dart';
 export 'gamification_repository.dart';
+export 'review_repository.dart';
