@@ -15,7 +15,7 @@ class Venue {
       this.address,
       this.number,
       this.imageBytes,
-      this.ratings});
+      this.ratings = 0});
 
   factory Venue.fromJson(Map<String, dynamic> json) {
     return Venue(
