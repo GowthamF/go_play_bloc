@@ -75,7 +75,7 @@ class UserApi {
 
   Future<User> deleteUser(User user) async {
     final response = await httpClient
-        .delete('${Constants.baseUrl}/api/User/UpdateUser/${user.userId}');
+        .delete('${Constants.baseUrl}/api/User/DeleteUser/${user.userId}');
 
     User _user = User();
 
