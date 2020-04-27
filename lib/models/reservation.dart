@@ -3,8 +3,8 @@ import 'package:go_play_bloc/models/models.dart';
 class Reservation {
   final int reservationId;
   final Venue venue;
-  final DateTime timeSlot;
-  final DateTime selectedDate;
+  final String timeSlot;
+  final String selectedDate;
   final String pitch;
   final double amount;
 
