@@ -1,14 +1,14 @@
-import 'package:go_play_bloc/models/models.dart';
-
 class Review {
   final int reviewId;
   final int venueId;
   final String reviewComment;
+  final double ratings;
 
   Review({
     this.reviewId = 0,
     this.venueId,
     this.reviewComment,
+    this.ratings = 0,
   });
 
   factory Review.fromJson(Map<String, dynamic> json) {
@@ -16,6 +16,7 @@ class Review {
       reviewId: json['reviewId'],
       venueId: json['venueId'],
       reviewComment: json['reviewComment'],
+      ratings: json['ratings'].toDouble(),
     );
   }
 
@@ -24,6 +25,7 @@ class Review {
       'ReviewId': review.reviewId,
       'ReviewComment': review.venueId,
       'VenueId': review.venueId,
+      'Ratings': review.ratings
     };
   }
 }
