@@ -46,7 +46,7 @@ class ReservationApi {
 
     Reservation _reservation = Reservation();
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       dynamic reservation = jsonDecode(response.body);
       _reservation = Reservation.fromJson(reservation);
     }
