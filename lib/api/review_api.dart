@@ -44,7 +44,7 @@ class ReviewApi {
 
     Review _venue = Review();
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       dynamic venues = jsonDecode(response.body);
       _venue = Review.fromJson(venues);
     }

@@ -23,7 +23,7 @@ class Review {
   Map<String, dynamic> toJson(Review review) {
     return {
       'ReviewId': review.reviewId,
-      'ReviewComment': review.venueId,
+      'ReviewComment': review.reviewComment,
       'VenueId': review.venueId,
       'Ratings': review.ratings
     };
