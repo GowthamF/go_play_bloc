@@ -9,18 +9,20 @@ class Venue {
   final double ratings;
   final double amount;
   final String description;
+  final String timeSlot;
   final List<VenueImage> venueImages;
 
   Venue(
       {this.venueId = 0,
-      this.venueName,
-      this.address,
-      this.number,
-      this.imageString,
+      this.venueName = '',
+      this.address = '',
+      this.number = '',
+      this.imageString = '',
       this.ratings = 0,
-      this.amount,
-      this.description,
-      this.venueImages});
+      this.amount = 0,
+      this.description = '',
+      this.venueImages,
+      this.timeSlot = ''});
 
   factory Venue.fromJson(Map<String, dynamic> json) {
     List<VenueImage> venueImages = [];
@@ -32,16 +34,16 @@ class Venue {
     }
 
     return Venue(
-      venueId: json['venueId'],
-      venueName: json['venueName'],
-      address: json['address'],
-      number: json['number'],
-      imageString: json['image'],
-      ratings: json['ratings'].toDouble(),
-      amount: json['amount'].toDouble(),
-      description: json['description'],
-      venueImages: venueImages,
-    );
+        venueId: json['venueId'],
+        venueName: json['venueName'],
+        address: json['address'],
+        number: json['number'],
+        imageString: json['image'],
+        ratings: json['ratings'].toDouble(),
+        amount: json['amount'].toDouble(),
+        description: json['description'],
+        venueImages: venueImages,
+        timeSlot: json['timeSlot']);
   }
 
   Map<String, dynamic> toJson(Venue venue) {
@@ -52,9 +54,12 @@ class Venue {
       'Number': venue.number,
       'Ratings': venue.ratings,
       'Image': venue.imageString,
-      'VenueImages': venue.venueImages.map(
-        (f) => f.toJson(f),
-      ),
+      'TimeSlot': venue.timeSlot,
+      'VenueImages': venue.venueImages == null
+          ? []
+          : venue.venueImages.map(
+              (f) => f.toJson(f),
+            ),
     };
   }
 }

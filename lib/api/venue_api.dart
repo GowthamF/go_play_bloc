@@ -43,9 +43,9 @@ class VenueApi {
 
     Venue _venue = Venue();
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       dynamic venues = jsonDecode(response.body);
-      _venue = Venue.fromJson(venues);
+      _venue = Venue(venueId: venues);
     }
 
     return _venue;
