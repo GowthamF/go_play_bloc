@@ -46,9 +46,9 @@ class PromotionApi {
 
     Promotion _promotion = Promotion();
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       dynamic promotion = jsonDecode(response.body);
-      _promotion = Promotion.fromJson(promotion);
+      _promotion = Promotion(promotionId: promotion);
     }
 
     return _promotion;

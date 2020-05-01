@@ -53,13 +53,14 @@ class Venue {
       'Address': venue.address,
       'Number': venue.number,
       'Ratings': venue.ratings,
+      'Description': venue.description,
       'Image': venue.imageString,
       'TimeSlot': venue.timeSlot,
       'VenueImages': venue.venueImages == null
           ? []
           : venue.venueImages.map(
               (f) => f.toJson(f),
-            ),
+            )
     };
   }
 }
