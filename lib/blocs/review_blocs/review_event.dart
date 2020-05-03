@@ -53,3 +53,5 @@ class DeleteReview extends ReviewEvent {
   @override
   List<Object> get props => [review];
 }
+
+class GetReviews extends ReviewEvent {}

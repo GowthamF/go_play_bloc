@@ -22,4 +22,8 @@ class ReviewRepository {
   Future<Review> deleteReview(Review review) async {
     return await reviewApi.deleteReview(review);
   }
+
+  Future<List<Review>> getReviews() async {
+    return await reviewApi.getReviews();
+  }
 }

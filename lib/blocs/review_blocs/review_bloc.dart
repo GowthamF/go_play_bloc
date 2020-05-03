@@ -56,6 +56,14 @@ class ReviewBloc extends Bloc<ReviewEvent, ReviewState> {
         print(ex);
         ReviewError();
       }
+    } else if (event is GetReviews) {
+      try {
+        List<Review> reviews = await _reviewRepository.getReviews();
+        yield ReviewAllLoaded(review: reviews);
+      } catch (ex) {
+        print(ex);
+        ReviewError();
+      }
     }
   }
 }

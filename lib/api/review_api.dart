@@ -24,6 +24,23 @@ class ReviewApi {
     return _venueList;
   }
 
+  Future<List<Review>> getReviews() async {
+    final response = await httpClient.get('${Constants.baseUrl}/api/Reviews');
+
+    List<Review> _venueList = [];
+
+    if (response.statusCode == 200) {
+      dynamic venues = jsonDecode(response.body);
+
+      for (var i = 0; i < venues.length; i++) {
+        var venue = Review.fromJson(venues[i]);
+        _venueList.add(venue);
+      }
+    }
+
+    return _venueList;
+  }
+
   Future<Review> getReview(int id) async {
     final response =
         await httpClient.get('${Constants.baseUrl}/api/Reviews/$id');

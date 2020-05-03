@@ -46,7 +46,7 @@ class GamificationApi {
 
     Gamification _gamification = Gamification();
 
-    if (response.statusCode == 200) {
+    if (response.statusCode == 201) {
       dynamic gamification = jsonDecode(response.body);
       _gamification = Gamification.fromJson(gamification);
     }

@@ -53,6 +53,7 @@ class Venue {
       'Address': venue.address,
       'Number': venue.number,
       'Ratings': venue.ratings,
+      'Amount': venue.amount,
       'Description': venue.description,
       'Image': venue.imageString,
       'TimeSlot': venue.timeSlot,
