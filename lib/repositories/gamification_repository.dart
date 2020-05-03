@@ -11,8 +11,8 @@ class GamificationRepository {
     return await gamificationApi.getGamification(gamification.gamificationId);
   }
 
-  Future<Gamification> updateGamification(Gamification gamification) async {
-    return await gamificationApi.updateGamification(gamification);
+  Future<Gamification> updateGamification(int userId) async {
+    return await gamificationApi.updateGamification(userId);
   }
 
   Future<Gamification> postGamification(Gamification gamification) async {

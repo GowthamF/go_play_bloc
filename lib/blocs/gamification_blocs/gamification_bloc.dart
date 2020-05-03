@@ -34,8 +34,8 @@ class GamificationBloc extends Bloc<GamificationEvent, GamificationState> {
     } else if (event is UpdateGamification) {
       yield GamificationLoading();
       try {
-        Gamification gamification = await _gamificationRepository
-            .updateGamification(event.gamification);
+        Gamification gamification =
+            await _gamificationRepository.updateGamification(event.userId);
         yield GamificationLoaded(gamification: gamification);
       } catch (ex) {
         print(ex);

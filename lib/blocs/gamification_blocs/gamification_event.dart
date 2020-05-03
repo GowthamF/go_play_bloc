@@ -29,12 +29,12 @@ class PostGamification extends GamificationEvent {
 }
 
 class UpdateGamification extends GamificationEvent {
-  final Gamification gamification;
+  final int userId;
 
-  const UpdateGamification({this.gamification});
+  const UpdateGamification({this.userId});
 
   @override
-  List<Object> get props => [gamification];
+  List<Object> get props => [userId];
 }
 
 class DeleteGamification extends GamificationEvent {

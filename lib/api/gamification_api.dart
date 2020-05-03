@@ -48,17 +48,16 @@ class GamificationApi {
 
     if (response.statusCode == 201) {
       dynamic gamification = jsonDecode(response.body);
-      _gamification = Gamification.fromJson(gamification);
+      _gamification = Gamification(gamificationId: gamification);
     }
 
     return _gamification;
   }
 
-  Future<Gamification> updateGamification(Gamification gamification) async {
+  Future<Gamification> updateGamification(int userId) async {
     final response = await httpClient.put(
-        '${Constants.baseUrl}/api/Gamifications/${gamification.gamificationId}',
-        headers: Constants.headers,
-        body: jsonEncode(gamification.toJson(gamification)));
+      '${Constants.baseUrl}/api/Gamifications/UpdatePoints/$userId',
+    );
 
     Gamification _gamification = Gamification();
 
